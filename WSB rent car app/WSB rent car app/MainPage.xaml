@@ -4,10 +4,31 @@
              x:Class="WSB_rent_car_app.MainPage">
 
     <StackLayout Margin="15">
-        <Label Text="Welcome !"/>
-        <Entry Placeholder="User Name" />
-        <Entry Placeholder="Password" />
-        <Button Clicked="Button_Clicked"/>
+        <Label x:Name="labelTitle"
+               Text="R"
+               TextColor="Black"
+               HorizontalTextAlignment="Center"
+               FontSize="80"/>
+        <Label x:Name="labelUserName"
+               Text="User Name"
+               FontSize="14"
+               TextColor="Black"
+               Margin="3,120,0,0"/>
+        <Entry x:Name="entryUserName"
+               Placeholder="JohnDoe123"/>
+        <Label x:Name="labelPasword"
+               Text="Password"
+               TextColor="Black"
+               Margin="3,25,0,0"
+               FontSize="14"/>
+        <Entry x:Name="entryPassword" 
+               Placeholder="**********" />
+        <Button Text="Sign in"
+                Clicked="Button_Clicked"
+                BackgroundColor="#003662"
+                TextColor="White"
+                CornerRadius="15"
+                Margin="45,80,45,0"/>
     </StackLayout>
 
 </ContentPage>
