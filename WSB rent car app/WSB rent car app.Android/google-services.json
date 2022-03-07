@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "794210005052",
+    "project_id": "wsbrentcarapp",
+    "storage_bucket": "wsbrentcarapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794210005052:android:0d35f008fabaa33fc1d339",
+        "android_client_info": {
+          "package_name": "com.companyname.wsb_rent_car_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794210005052-16jsnbj0fmtksss2jctggcvp12mr5o73.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDqDUR9gnhqsp6UOSeNbV4if6sp1pRMQJM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794210005052-16jsnbj0fmtksss2jctggcvp12mr5o73.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

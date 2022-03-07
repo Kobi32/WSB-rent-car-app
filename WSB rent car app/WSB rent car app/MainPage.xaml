@@ -1,19 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WSB_rent_car_app.MainPage">
-
-    <StackLayout Margin="15">
-        <Label x:Name="labelTitle"
-               Text="R"
-               TextColor="Black"
-               HorizontalTextAlignment="Center"
-               FontSize="80"/>
+             x:Class="WSB_rent_car_app.MainPage"
+             BackgroundColor="white"
+             NavigationPage.HasNavigationBar="false">
+    
+    <StackLayout Margin="15" BackgroundColor="White">
+        <Image Source="WSBAppLogo.png" 
+               Margin="80"/>
         <Label x:Name="labelUserName"
                Text="User Name"
                FontSize="14"
                TextColor="Black"
-               Margin="3,120,0,0"/>
+               Margin="3,30,0,0"/>
         <Entry x:Name="entryUserName"
                Placeholder="JohnDoe123"/>
         <Label x:Name="labelPasword"
@@ -22,9 +21,11 @@
                Margin="3,25,0,0"
                FontSize="14"/>
         <Entry x:Name="entryPassword" 
-               Placeholder="**********" />
-        <Button Text="Sign in"
-                Clicked="Button_Clicked"
+               Placeholder="**********"
+               IsPassword="True"/>
+        <Button x:Name="buttonLogin"
+                Text="Sign in"
+                Clicked="buttonLogin_Clicked"
                 BackgroundColor="#003662"
                 TextColor="White"
                 CornerRadius="15"
