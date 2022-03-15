@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSB rent car app.Android", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSB rent car app.iOS", "WSB rent car app\WSB rent car app.iOS\WSB rent car app.iOS.csproj", "{B66106EB-6E47-42D5-A78B-973276CF3C3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSB rent car app", "WSB rent car app\WSB rent car app\WSB rent car app.csproj", "{B322A5B3-830E-4D55-8C78-DB447CA5A714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WSB rent car app", "WSB rent car app\WSB rent car app\WSB rent car app.csproj", "{B322A5B3-830E-4D55-8C78-DB447CA5A714}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

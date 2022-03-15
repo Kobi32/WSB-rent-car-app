@@ -14,10 +14,30 @@ namespace WSB_rent_car_app
         {
             InitializeComponent();
         }
-
-        private void Button_Clicked(object sender, EventArgs e)
+        private void buttonLogin_Clicked(object sender, EventArgs e)
         {
+            if (AreLoginsFieldsNotEmpty())
+            {
+                Navigation.PushAsync(new MainApplicationWindow());
+            }
+            else 
+            {
+                // dont navigate 
+            }
+        }
 
+        private bool AreLoginsFieldsNotEmpty()
+        {
+            bool isLoginEmpty = string.IsNullOrEmpty(entryUserName.Text);
+            bool isPasswordEmpty = string.IsNullOrEmpty(entryPassword.Text);
+            if (isLoginEmpty || isPasswordEmpty)
+            {
+                return false;
+            }
+            else 
+            {
+                return true;
+            }
         }
     }
 }
