@@ -11890,10 +11890,7 @@ namespace WSB_rent_car_app.Droid
 			public const int tooltip_frame_light = 2131165348;
 			
 			// aapt resource value: 0x7F0700A5
-			public const int UserLogo = 2131165349;
-			
-			// aapt resource value: 0x7F0700A6
-			public const int WSBAppLogo = 2131165350;
+			public const int WSBAppLogo = 2131165349;
 			
 			static Drawable()
 			{

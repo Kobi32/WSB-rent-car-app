@@ -44,12 +44,12 @@
                FontSize="14"
                TextColor="Black"
                Margin="10,5,0,0"/>
-            <Label x:Name="labelCreditCard"
+            <Label x:Name="labelCreditCard2"
                Text="FIAT TIPO"
                FontSize="14"
                TextColor="Black"
                Margin="10,30,0,0"/>
-            <Label x:Name="dataCreditCard"
+            <Label x:Name="dataCreditCard2"
                Text="Country: Poland            Days: 1             Cost: 25 EUR"
                FontSize="14"
                TextColor="Black"
