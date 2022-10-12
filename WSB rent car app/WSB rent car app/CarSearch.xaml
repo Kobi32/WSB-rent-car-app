@@ -3,10 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WSB_rent_car_app.CarSearch">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="White">
+            
+            <Label x:Name="labelUserName"
+               Text="Car type"
+               FontSize="14"
+               TextColor="Black"
+               Margin="3,30,0,0"/>
+            <Entry x:Name="entryUserName"
+               Placeholder="Car type box to be implemented"/>
+            <Label x:Name="labelUserName"
+               Text="Country"
+               FontSize="14"
+               TextColor="Black"
+               Margin="3,30,0,0"/>
+            <Entry x:Name="entryUserName"
+               Placeholder="Country combo box to be implemented"/>
+            <Label x:Name="labelUserName"
+               Text="Pick Up location"
+               FontSize="14"
+               TextColor="Black"
+               Margin="3,30,0,0"/>
+            <Entry x:Name="entryUserName"
+               Placeholder="to be implemented"/>
+            <Label x:Name="labelUserName"
+               Text="Dates"
+               FontSize="14"
+               TextColor="Black"
+               Margin="3,30,0,0"/>
+            <Entry x:Name="entryUserName"
+               Placeholder="Data picker to be implemented"/>
+            <Button x:Name="buttonSearch"
+                Text="Search"
+                Clicked="buttonSearch_Clicked"
+                BackgroundColor="#003662"
+                TextColor="White"
+                CornerRadius="15"
+                Margin="45,80,45,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

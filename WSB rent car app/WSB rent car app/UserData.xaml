@@ -3,10 +3,53 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WSB_rent_car_app.UserData">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="White">
+            <Image Source="UserLogo.png" Margin="30 ,30 ,30 , 10"/>
+            <Label x:Name="labelUserName"
+               Text="Łukasz Lisowski"
+               FontSize="24"
+               TextColor="Black"
+               Margin="115,5,0,20"/>
+            <Label x:Name="labelStreet"
+               Text="Street"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,30,0,0"/>
+            <Label x:Name="dataStreet"
+               Text="Węgliniecka 5/11"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,5,0,0"/>
+            <Label x:Name="labelCity"
+               Text="City"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,30,0,0"/>
+            <Label x:Name="dataCity"
+               Text="Wrocław"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,5,0,0"/>
+            <Label x:Name="labelPhone"
+               Text="Phone"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,30,0,0"/>
+            <Label x:Name="dataPhone"
+               Text="791-509-007"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,5,0,0"/>
+            <Label x:Name="labelCreditCard"
+               Text="Credit Card"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,30,0,0"/>
+            <Label x:Name="dataCreditCard"
+               Text="XXXX - XXXX - XXXX - 8773"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,5,0,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

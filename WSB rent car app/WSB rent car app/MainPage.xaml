@@ -7,7 +7,7 @@
     
     <StackLayout Margin="15" BackgroundColor="White">
         <Image Source="WSBAppLogo.png" 
-               Margin="80"/>
+               Margin="30"/>
         <Label x:Name="labelUserName"
                Text="User Name"
                FontSize="14"
