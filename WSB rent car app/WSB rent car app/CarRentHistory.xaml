@@ -3,10 +3,57 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WSB_rent_car_app.CarRentHistory">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout BackgroundColor="White">
+            <Label x:Name="labelStreet"
+               Text="VW POLO"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,30,0,0"/>
+            <Label x:Name="dataStreet"
+               Text="Country: Greece            Days: 5             Cost: 150 EUR"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,5,0,0"/>
+            <Label x:Name="labelCity"
+               Text="VW POLO"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,30,0,0"/>
+            <Label x:Name="dataCity"
+               Text="Country: Greece            Days: 2             Cost: 75 EUR"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,5,0,0"/>
+            <Label x:Name="labelPhone"
+               Text="OPEL ASTRA"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,30,0,0"/>
+            <Label x:Name="dataPhone"
+               Text="Country: Italy                 Days: 14             Cost: 1150 EUR"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,5,0,0"/>
+            <Label x:Name="labelCreditCard"
+               Text="OPEL CORSA"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,30,0,0"/>
+            <Label x:Name="dataCreditCard"
+               Text="Country: Poland            Days: 6             Cost: 169 EUR"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,5,0,0"/>
+            <Label x:Name="labelCreditCard"
+               Text="FIAT TIPO"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,30,0,0"/>
+            <Label x:Name="dataCreditCard"
+               Text="Country: Poland            Days: 1             Cost: 25 EUR"
+               FontSize="14"
+               TextColor="Black"
+               Margin="10,5,0,0"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
