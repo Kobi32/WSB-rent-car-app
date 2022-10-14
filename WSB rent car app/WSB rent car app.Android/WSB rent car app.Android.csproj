@@ -78,6 +78,9 @@
     <PackageReference Include="Xamarin.Firebase.Auth">
       <Version>121.0.1.4</Version>
     </PackageReference>
+    <PackageReference Include="Xamarin.Firebase.Database">
+      <Version>118.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Firebase.Firestore">
       <Version>123.0.3.3</Version>
     </PackageReference>
@@ -90,7 +93,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="google-services.json" />
+    <GoogleServicesJson Include="google-services.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />

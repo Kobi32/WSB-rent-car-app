@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WSB_rent_car_app.CreateAccount"
+             BackgroundColor="white">
+    <NavigationPage.TitleView>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Create a New Account" 
+                   Padding="0,8,0,10" 
+                   TextColor="Black"
+                   FontSize="18"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <StackLayout x:Name="RegisterStack" Margin="55,55,55,55" BackgroundColor="White" Spacing="15">
+        <Entry x:Name="entryUserName"
+               Placeholder="User Name"
+               FontSize="12"
+               />
+        <Entry x:Name="entryUserFirstName"
+               Placeholder="First Name"
+               FontSize="12"
+               />
+        <Entry x:Name="entryLastName"
+               Placeholder="Last Name"
+               FontSize="12"/>
+        <Entry x:Name="entryEmail"
+               Placeholder="Email"
+               FontSize="12"/>
+        <Entry x:Name="entryStreet"
+               Placeholder="Street"
+               FontSize="12"
+               />
+        <Entry x:Name="entryCity"
+               Placeholder="City"
+               FontSize="12"/>
+        <Entry x:Name="entryPassword"
+               Placeholder="Password"
+               FontSize="12"
+               IsPassword="True"/>
+        <Entry x:Name="entryPasswordConfirmation"
+               Placeholder="Password Confirmation"
+               FontSize="12"
+               IsPassword="True"/>
+        <Label x:Name="labelMessage"
+               HorizontalTextAlignment="Center"
+               Text="Message"
+               TextColor="Red"
+               Margin="3,25,0,0"
+               FontSize="12"
+               IsVisible="False"/>
+        <StackLayout Margin="0,0,0,0" BackgroundColor="White">
+            <Button x:Name="buttonCreateAccount"
+                Text="Create Account"
+                Clicked="ButtonCreateAccount_Clicked"
+                BackgroundColor="#003662"
+                TextColor="White"
+                CornerRadius="15"
+                Margin="50,60,50,0"
+                FontSize="12"
+                HeightRequest="40"
+                />
+         </StackLayout>
+    </StackLayout>
+</ContentPage>

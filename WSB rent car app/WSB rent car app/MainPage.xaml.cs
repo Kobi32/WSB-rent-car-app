@@ -39,5 +39,10 @@ namespace WSB_rent_car_app
                 return true;
             }
         }
+
+        private void buttonRegister_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateAccount());
+        }
     }
 }
