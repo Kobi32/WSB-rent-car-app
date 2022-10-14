@@ -1,8 +1,9 @@
-﻿
-using Firebase.Database;
+﻿using Firebase.Database;
 using Newtonsoft.Json;
+using Firebase.Database.Query;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WSB_rent_car_app.Models;
@@ -22,14 +23,21 @@ namespace WSB_rent_car_app.Service
             }
             return false;
         }
-        public async Task<bool> IsLoginNameUnique(string loginName)
+        public async Task<User> GetUserData(string loginName)
         {
-            var data = await firebaseClient.Child(nameof(User)).PostAsync(JsonConvert.SerializeObject(loginName));
-            if (!string.IsNullOrEmpty(data.Key))
+            var userData = (await firebaseClient.Child(nameof(User)).OnceAsync<User>()).Select(item => new User 
             {
-                return true;
-            }
-            return false;
+                Login = item.Object.Login,
+                FirstName = item.Object.FirstName,
+                LastName = item.Object.LastName,
+                Email = item.Object.Email,
+                Street = item.Object.Street,
+                City = item.Object.City,
+                Password = item.Object.Password,
+            }).ToList();
+
+            var user =  userData.Where(x => x.Login == loginName).FirstOrDefault();
+            return user;
         }
-    }
+     }
 }

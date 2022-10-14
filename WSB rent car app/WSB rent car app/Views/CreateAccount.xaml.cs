@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WSB_rent_car_app.Controllers;
 using WSB_rent_car_app.Models;
 using WSB_rent_car_app.Service;
 using Xamarin.Forms;
@@ -23,28 +24,29 @@ namespace WSB_rent_car_app
         {
             try
             {
-                if (HasAllFieldsValue())
+                if (HasAllFieldsProperValue())
                 {
                     UserRepository userRepository = new UserRepository();
-                    if (await userRepository.IsLoginNameUnique(entryUserName.Text))
+                    var userData= await userRepository.GetUserData(entryUserName.Text);
+                    if (userData==null)
                     {
-                        User user = new User
+                        User newUser = new User
                         {
                             Login = entryUserName.Text,
                             FirstName = entryUserFirstName.Text,
                             LastName = entryLastName.Text,
+                            Email = entryEmail.Text,
                             City = entryCity.Text,
                             Street = entryStreet.Text,
                             Password = entryPassword.Text
                         };
 
-                        var isSaved = await userRepository.AddUser(user);
+                        var isSaved = await userRepository.AddUser(newUser);
                         if (isSaved)
                         {
                             ClearAllFields();
                             labelMessage.IsVisible = true;
-                            labelMessage.TextColor = Color.Black;
-                            labelMessage.Text = "New user added. You can sign in.";
+                            labelMessage.Text = "Your account has been created. You can sign in.";
                         }
                         else
                         {
@@ -64,11 +66,11 @@ namespace WSB_rent_car_app
             {
                 Console.WriteLine("{0} Exception caught.", err);
                 labelMessage.IsVisible = true;
-                labelMessage.Text = "string.Format(\"Error occuerd. Please try agian later.{0}\", err)";
+                labelMessage.Text = "Error occuerd. Please try agian later.";
             }
         }
 
-        private bool HasAllFieldsValue()
+        private bool HasAllFieldsProperValue()
         { 
             var allEntryFields = RegisterStack.Children.ToList();
 
@@ -85,28 +87,22 @@ namespace WSB_rent_car_app
                 }
             }
 
-            if(!ArePassowrdsMatch())
+            UserController userController = new UserController();
+
+            if(!userController.IsValidEmail(entryEmail.Text))
             {
                 labelMessage.IsVisible = true;
-                labelMessage.Text = String.Format("Passwords are not the same.");
+                labelMessage.Text = "Your email looks incorrect. Please validate.";
+                return false;
+            }
+
+            if (!userController.ArePassowrdsMatch(entryPassword.Text, entryPasswordConfirmation.Text))
+            {
+                labelMessage.IsVisible = true;
+                labelMessage.Text = "Passwords are not the same.";
                 return false;
             }
             return true;
-        }
-
-        private bool ArePassowrdsMatch() 
-        {
-            string password = entryPassword.Text;
-            string passwordConfirmation = entryPasswordConfirmation.Text;
-
-            if (string.Equals(password, passwordConfirmation))
-            {
-                return true;
-            }
-            else 
-            {
-                return false;
-            }  
         }
 
         private void ClearAllFields()
@@ -117,7 +113,7 @@ namespace WSB_rent_car_app
             {
                 if (field is Entry myField)
                 {
-                    myField.Text = null;
+                    myField.Text = string.Empty;
                 }
             }
         }

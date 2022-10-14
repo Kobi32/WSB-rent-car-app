@@ -44,7 +44,7 @@
         <Label x:Name="labelMessage"
                HorizontalTextAlignment="Center"
                Text="Message"
-               TextColor="Red"
+               TextColor="Black"
                Margin="3,25,0,0"
                FontSize="12"
                IsVisible="False"/>
