@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WSB_rent_car_app.Controllers;
+using WSB_rent_car_app.Service;
 using Xamarin.Forms;
 
 namespace WSB_rent_car_app
@@ -14,15 +16,15 @@ namespace WSB_rent_car_app
         {
             InitializeComponent();
         }
-        private void buttonLogin_Clicked(object sender, EventArgs e)
+        private async void ButtonLogin_Clicked(object sender, EventArgs e)
         {
             if (AreLoginsFieldsNotEmpty())
             {
-                Navigation.PushAsync(new MainApplicationWindow());
-            }
-            else 
-            {
-                // dont navigate 
+                if (await CheckUserCredentials()) 
+                {
+                    await Navigation.PushAsync(new MainApplicationWindow());
+                    ClearAllFields();
+                }
             }
         }
 
@@ -30,14 +32,63 @@ namespace WSB_rent_car_app
         {
             bool isLoginEmpty = string.IsNullOrEmpty(entryUserName.Text);
             bool isPasswordEmpty = string.IsNullOrEmpty(entryPassword.Text);
-            if (isLoginEmpty || isPasswordEmpty)
+            if (isLoginEmpty)
             {
+                labelMessage.Text = "Please type user name.";
+                return false;
+            }
+            else if (isPasswordEmpty)
+            {
+                labelMessage.Text = "Please type password.";
                 return false;
             }
             else 
             {
                 return true;
             }
+        }
+
+        private void ButtonRegister_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new CreateAccount());
+            ClearAllFields();
+        }
+
+        private void ClearAllFields()
+        {
+            var allEntryFields = LoginStack.Children.ToList();
+
+            foreach (var field in allEntryFields)
+            {
+                if (field is Entry myField)
+                {
+                    myField.Text = string.Empty;
+                }
+            }
+            labelMessage.Text = "";
+        }
+        private async Task<bool> CheckUserCredentials() 
+        {
+            UserRepository userRepository = new UserRepository();
+            var userData = await userRepository.GetUserData(entryUserName.Text);
+            if (userData == null)
+            {
+                labelMessage.Text = "User or passowrd are incorrect. Please try agian.";
+                return false;
+            }
+            else
+            {
+                UserController userController = new UserController();
+                if (userController.ArePassowordsMatch(entryPassword.Text,userData.Password))
+                {
+                    return true;
+                }
+                else
+                {
+                    labelMessage.Text = "User or passowrd are incorrect. Please try agian.";
+                    return false;
+                }
+            }      
         }
     }
 }
