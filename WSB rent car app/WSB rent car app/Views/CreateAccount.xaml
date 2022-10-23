@@ -1,8 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:controls="clr-namespace:WSB_rent_car_app.Components.XamBooksApp.Controls"
              x:Class="WSB_rent_car_app.CreateAccount"
              BackgroundColor="white">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="controls:StandardEntry">
+                <Setter Property="Padding" Value="15,10,13,10"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="BackgroundColor" Value="#31FFFFFF"></Setter>
+                <Setter Property="BorderColor" Value="LightGray"></Setter>
+                <Setter Property="FontSize" Value="13"></Setter>
+                <Setter Property="BorderThickness" Value="1"></Setter>
+                <Setter Property="CornerRadius" Value="14"></Setter>
+                <Setter Property="PlaceholderColor" Value="Gray"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <NavigationPage.TitleView>
         <StackLayout BackgroundColor="White">
             <Label Text="Create a New Account" 
@@ -11,43 +26,51 @@
                    FontSize="18"/>
         </StackLayout>
     </NavigationPage.TitleView>
-    <StackLayout x:Name="RegisterStack" Margin="55,55,55,55" BackgroundColor="White" Spacing="15">
-        <Entry x:Name="entryUserName"
-               Placeholder="User Name"
-               FontSize="12"
-               />
-        <Entry x:Name="entryUserFirstName"
-               Placeholder="First Name"
-               FontSize="12"
-               />
-        <Entry x:Name="entryLastName"
-               Placeholder="Last Name"
-               FontSize="12"/>
-        <Entry x:Name="entryEmail"
-               Placeholder="Email"
-               FontSize="12"/>
-        <Entry x:Name="entryStreet"
-               Placeholder="Street"
-               FontSize="12"
-               />
-        <Entry x:Name="entryCity"
-               Placeholder="City"
-               FontSize="12"/>
-        <Entry x:Name="entryPassword"
-               Placeholder="Password"
-               FontSize="12"
-               IsPassword="True"/>
-        <Entry x:Name="entryPasswordConfirmation"
-               Placeholder="Password Confirmation"
-               FontSize="12"
-               IsPassword="True"/>
+    <StackLayout x:Name="RegisterStack" Margin="55,35,55,55" BackgroundColor="White" Spacing="15">
+        <controls:StandardEntry
+            x:Name="entryUserName"
+            Grid.Row="2"
+            Placeholder="User Name"/>
+        <controls:StandardEntry
+            x:Name="entryUserFirstName"
+            Grid.Row="2"
+            Placeholder="First Name"/>
+        <controls:StandardEntry
+            x:Name="entryLastName"
+            Grid.Row="2"
+            FontSize="13"
+            Placeholder="Last Name"/>
+        <controls:StandardEntry
+            x:Name="entryEmail"
+            Keyboard="Email"
+            Grid.Row="2"
+            Placeholder="Email"/>
+        <controls:StandardEntry
+            x:Name="entryStreet"
+            Grid.Row="2"
+            FontSize="13"
+            Placeholder="Street" />
+        <controls:StandardEntry
+            x:Name="entryCity"
+            Grid.Row="2"
+            CornerRadius="14"
+            Placeholder="City"/>
+        <controls:StandardEntry
+            x:Name="entryPassword"
+            IsPassword="True"
+            Grid.Row="2"
+            Placeholder="Password"/>
+        <controls:StandardEntry
+            x:Name="entryPasswordConfirmation"
+            IsPassword="True"
+            Grid.Row="2"
+            Placeholder="Password Confirmation"/>
         <Label x:Name="labelMessage"
                HorizontalTextAlignment="Center"
-               Text="Message"
-               TextColor="Black"
+               Text=""
+               TextColor="Red"
                Margin="3,25,0,0"
-               FontSize="12"
-               IsVisible="False"/>
+               FontSize="12"/>
         <StackLayout Margin="0,0,0,0" BackgroundColor="White">
             <Button x:Name="buttonCreateAccount"
                 Text="Create Account"
@@ -55,7 +78,7 @@
                 BackgroundColor="#003662"
                 TextColor="White"
                 CornerRadius="15"
-                Margin="50,60,50,0"
+                Margin="50,30,50,0"
                 FontSize="12"
                 HeightRequest="40"
                 />

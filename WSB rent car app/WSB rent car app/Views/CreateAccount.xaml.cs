@@ -45,19 +45,16 @@ namespace WSB_rent_car_app
                         if (isSaved)
                         {
                             ClearAllFields();
-                            labelMessage.IsVisible = true;
                             labelMessage.Text = "Your account has been created. You can sign in.";
                         }
                         else
                         {
-                            labelMessage.IsVisible = true;
                             labelMessage.Text = "Unable to register new user. Please try agian later.";
                         }
 
                     }
                     else 
                     {
-                        labelMessage.IsVisible = true;
                         labelMessage.Text = "Unable to create account. This user name already exists.";
                     }
                 }
@@ -65,7 +62,6 @@ namespace WSB_rent_car_app
             catch (Exception err)
             {
                 Console.WriteLine("{0} Exception caught.", err);
-                labelMessage.IsVisible = true;
                 labelMessage.Text = "Error occuerd. Please try agian later.";
             }
         }
@@ -80,7 +76,6 @@ namespace WSB_rent_car_app
                 {
                     if (string.IsNullOrEmpty(myField.Text))
                     {
-                        labelMessage.IsVisible = true;
                         labelMessage.Text = String.Format("All above fields are required. Please type {0}." , myField.Placeholder);
                         return false;
                     }
@@ -91,14 +86,12 @@ namespace WSB_rent_car_app
 
             if(!userController.IsValidEmail(entryEmail.Text))
             {
-                labelMessage.IsVisible = true;
-                labelMessage.Text = "Your email looks incorrect. Please validate.";
+                labelMessage.Text = "Your email looks incorrect. Please check it.";
                 return false;
             }
 
-            if (!userController.ArePassowrdsMatch(entryPassword.Text, entryPasswordConfirmation.Text))
+            if (!userController.ArePassowordsMatch(entryPassword.Text, entryPasswordConfirmation.Text))
             {
-                labelMessage.IsVisible = true;
                 labelMessage.Text = "Passwords are not the same.";
                 return false;
             }

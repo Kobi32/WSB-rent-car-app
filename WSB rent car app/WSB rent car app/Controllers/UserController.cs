@@ -25,7 +25,7 @@ namespace WSB_rent_car_app.Controllers
             }
         }
 
-        public bool ArePassowrdsMatch(string password, string passwordConfirmation)
+        public bool ArePassowordsMatch(string password, string passwordConfirmation)
         {
             if (string.Equals(password, passwordConfirmation))
             {
