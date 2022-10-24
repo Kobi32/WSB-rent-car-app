@@ -30,7 +30,7 @@ namespace WSB_rent_car_app
                     var userData= await userRepository.GetUserData(entryUserName.Text);
                     if (userData==null)
                     {
-                        User newUser = new User
+                        UserDetails newUser = new UserDetails
                         {
                             Login = entryUserName.Text,
                             FirstName = entryUserFirstName.Text,
@@ -38,7 +38,8 @@ namespace WSB_rent_car_app
                             Email = entryEmail.Text,
                             City = entryCity.Text,
                             Street = entryStreet.Text,
-                            Password = entryPassword.Text
+                            Password = entryPassword.Text,
+                            Phone = entryPhone.Text
                         };
 
                         var isSaved = await userRepository.AddUser(newUser);

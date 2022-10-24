@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WSB_rent_car_app.Controllers;
+using WSB_rent_car_app.Models;
 using WSB_rent_car_app.Service;
 using Xamarin.Forms;
 
@@ -19,10 +20,15 @@ namespace WSB_rent_car_app
         private async void ButtonLogin_Clicked(object sender, EventArgs e)
         {
             if (AreLoginsFieldsNotEmpty())
-            {
-                if (await CheckUserCredentials()) 
+            { 
+                UserDetails user = await CheckUserCredentials();
+                if ((bool)user.isLoginDataCorrect) 
                 {
-                    await Navigation.PushAsync(new MainApplicationWindow());
+                    MainApplicationWindow page = new MainApplicationWindow();
+                    UserDataModel userDataModel = new UserDataModel();
+                    userDataModel.UserDetails = user;
+                    page.BindingContext = user;
+                    await Navigation.PushAsync(page);
                     ClearAllFields();
                 }
             }
@@ -67,26 +73,29 @@ namespace WSB_rent_car_app
             }
             labelMessage.Text = "";
         }
-        private async Task<bool> CheckUserCredentials() 
+        private async Task<UserDetails> CheckUserCredentials() 
         {
             UserRepository userRepository = new UserRepository();
-            var userData = await userRepository.GetUserData(entryUserName.Text);
+            UserDetails userData = await userRepository.GetUserData(entryUserName.Text);
             if (userData == null)
             {
+                userData.isLoginDataCorrect = false;
                 labelMessage.Text = "User or passowrd are incorrect. Please try agian.";
-                return false;
+                return userData;
             }
             else
             {
                 UserController userController = new UserController();
                 if (userController.ArePassowordsMatch(entryPassword.Text,userData.Password))
                 {
-                    return true;
+                    userData.isLoginDataCorrect = true;
+                    return userData;
                 }
                 else
                 {
+                    userData.isLoginDataCorrect = false;
                     labelMessage.Text = "User or passowrd are incorrect. Please try agian.";
-                    return false;
+                    return userData;
                 }
             }      
         }

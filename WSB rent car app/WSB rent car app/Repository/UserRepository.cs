@@ -14,18 +14,18 @@ namespace WSB_rent_car_app.Service
     {
         private readonly FirebaseClient firebaseClient = new FirebaseClient("https://wsbrentcarapp-default-rtdb.europe-west1.firebasedatabase.app/");
 
-        public async Task<bool> AddUser(User user)
+        public async Task<bool> AddUser(UserDetails user)
         {
-            var data = await firebaseClient.Child(nameof(User)).PostAsync(JsonConvert.SerializeObject(user));
+            var data = await firebaseClient.Child(nameof(UserDetails)).PostAsync(JsonConvert.SerializeObject(user));
             if (!string.IsNullOrEmpty(data.Key))
             {
                 return true;
             }
             return false;
         }
-        public async Task<User> GetUserData(string loginName)
+        public async Task<UserDetails> GetUserData(string loginName)
         {
-            var userData = (await firebaseClient.Child(nameof(User)).OnceAsync<User>()).Select(item => new User 
+            var userData = (await firebaseClient.Child(nameof(UserDetails)).OnceAsync<UserDetails>()).Select(item => new UserDetails 
             {
                 Login = item.Object.Login,
                 FirstName = item.Object.FirstName,
@@ -34,6 +34,7 @@ namespace WSB_rent_car_app.Service
                 Street = item.Object.Street,
                 City = item.Object.City,
                 Password = item.Object.Password,
+                Phone = item.Object.Phone
             }).ToList();
 
             var user =  userData.Where(x => x.Login == loginName).FirstOrDefault();

@@ -11,7 +11,7 @@
                 <Setter Property="TextColor" Value="Black"></Setter>
                 <Setter Property="BackgroundColor" Value="#31FFFFFF"></Setter>
                 <Setter Property="BorderColor" Value="LightGray"></Setter>
-                <Setter Property="FontSize" Value="13"></Setter>
+                <Setter Property="FontSize" Value="12"></Setter>
                 <Setter Property="BorderThickness" Value="1"></Setter>
                 <Setter Property="CornerRadius" Value="14"></Setter>
                 <Setter Property="PlaceholderColor" Value="Gray"></Setter>
@@ -56,6 +56,11 @@
             CornerRadius="14"
             Placeholder="City"/>
         <controls:StandardEntry
+            x:Name="entryPhone"
+            Grid.Row="2"
+            CornerRadius="14"
+            Placeholder="Phone Number"/>
+        <controls:StandardEntry
             x:Name="entryPassword"
             IsPassword="True"
             Grid.Row="2"
@@ -68,7 +73,7 @@
         <Label x:Name="labelMessage"
                HorizontalTextAlignment="Center"
                Text=""
-               TextColor="Red"
+               TextColor="Black"
                Margin="3,25,0,0"
                FontSize="12"/>
         <StackLayout Margin="0,0,0,0" BackgroundColor="White">

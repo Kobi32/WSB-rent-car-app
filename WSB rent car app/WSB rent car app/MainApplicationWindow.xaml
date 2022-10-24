@@ -2,9 +2,15 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:locals="clr-namespace:WSB_rent_car_app"
+            xmlns:models="clr-namespace:WSB_rent_car_app.Models"
             x:Class="WSB_rent_car_app.MainApplicationWindow"
-            NavigationPage.HasNavigationBar="false">
-    <locals:CarSearch Title="Search"/>
-    <locals:CarRentHistory Title="History"/>
-    <locals:UserData Title="User"/>
+            NavigationPage.HasNavigationBar="false"
+            BarBackgroundColor="White"
+            BarTextColor="Gray">
+    <TabbedPage.BindingContext>
+        <models:UserDataModel/>
+    </TabbedPage.BindingContext>
+    <locals:CarSearch Title="Search" Icon="search.png"/>
+    <locals:CarRentHistory Title="History" Icon="history.png" />
+    <locals:UserData Title="User" Icon="person.png"/>
 </TabbedPage>

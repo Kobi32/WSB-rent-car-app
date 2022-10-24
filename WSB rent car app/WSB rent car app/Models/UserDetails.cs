@@ -5,7 +5,7 @@ using WSB_rent_car_app.Interfaces;
 
 namespace WSB_rent_car_app.Models
 {
-    public class User : IUser
+    public class UserDetails : IUserDetails
     {
         public string Login { get; set; }
         public string FirstName { get; set; }
@@ -14,5 +14,8 @@ namespace WSB_rent_car_app.Models
         public string Street { get; set; }
         public string City { get; set; }
         public string Password { get; set; }
+        public string Phone { get; set; }
+
+        public bool? isLoginDataCorrect { get; set; }    
     }
 }

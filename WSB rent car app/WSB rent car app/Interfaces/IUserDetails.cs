@@ -4,7 +4,7 @@ using System.Text;
 
 namespace WSB_rent_car_app.Interfaces
 {
-    interface IUser
+    interface IUserDetails
     {
         string Login { get; set; }
         string FirstName { get; set; }
@@ -13,5 +13,7 @@ namespace WSB_rent_car_app.Interfaces
         string Street { get; set; }
         string City { get; set; }
         string Password { get; set; }
+        string Phone { get; set; }
+        bool? isLoginDataCorrect { get; set; }
     }
 }
