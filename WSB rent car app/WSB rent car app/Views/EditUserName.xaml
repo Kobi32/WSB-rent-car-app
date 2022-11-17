@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:WSB_rent_car_app.Components.XamBooksApp.Controls"
+             x:Class="WSB_rent_car_app.Views.EditUserName"
+             BackgroundColor="white">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="controls:StandardEntry">
+                <Setter Property="Padding" Value="15,10,13,10"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="BackgroundColor" Value="#31FFFFFF"></Setter>
+                <Setter Property="BorderColor" Value="LightGray"></Setter>
+                <Setter Property="FontSize" Value="12"></Setter>
+                <Setter Property="BorderThickness" Value="1"></Setter>
+                <Setter Property="CornerRadius" Value="14"></Setter>
+                <Setter Property="PlaceholderColor" Value="Gray"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <NavigationPage.TitleView>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Change your first and last name" 
+                   Padding="0,8,0,10" 
+                   TextColor="Black"
+                   FontSize="18"/>
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <StackLayout x:Name="RegisterStack" Margin="55,35,55,55" BackgroundColor="White" Spacing="15">
+        <controls:StandardEntry
+            x:Name="entryUserFirstName"
+            Grid.Row="2"
+            Placeholder="First Name"/>
+        <controls:StandardEntry
+            x:Name="entryLastName"
+            Grid.Row="2"
+            FontSize="13"
+            Placeholder="Last Name"/>
+        <StackLayout Margin="0,0,0,0" BackgroundColor="White">
+            <Button x:Name="buttonSave"
+                Text="Save"
+                Clicked="ButtonSave_Clicked"
+                BackgroundColor="#003662"
+                TextColor="White"
+                CornerRadius="15"
+                Margin="50,30,50,0"
+                FontSize="12"
+                HeightRequest="40"
+                />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

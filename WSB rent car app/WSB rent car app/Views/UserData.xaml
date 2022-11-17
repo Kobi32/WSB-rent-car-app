@@ -4,68 +4,208 @@
              x:Class="WSB_rent_car_app.UserData"
              >
     <ContentPage.Content>
-        <StackLayout BackgroundColor="White">
-            <Image Source="UserLogo.png" Margin="30 ,30 ,30 , 10"/>
+        <StackLayout BackgroundColor="#ececec">
+            <Image Source="face.png" Margin="30 ,30 ,30 ,0" Scale="0.7"/>
             <Label x:Name="labelUserLogin"
                Text="{Binding Login}"
-               FontSize="24"
+               FontSize="18"
+               FontAttributes="Bold"
                TextColor="Black"
                HorizontalTextAlignment="Center"/>
-            <Label x:Name="labelUserName"
-               Text="User Name:"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataUserFirstName"
-               Text="{Binding FirstName}"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
-            <Label x:Name="labelEmail"
-               Text="User Name:"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataUserEmail"
-               Text="{Binding Email}"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
-            <Label x:Name="labelStreet"
-               Text="Address:"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataStreet"
-               Text="{Binding Street}"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
-            <Label x:Name="dataCity"
-               Text="{Binding City}"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
-            <Label x:Name="labelPhone"
-               Text="Phone"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataPhone"
-               Text="791-509-007"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
-            <Label x:Name="labelCreditCard"
-               Text="Credit Card"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataCreditCard"
-               Text="XXXX - XXXX - XXXX - 8773"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
+            <Grid>
+                <Frame CornerRadius="10"  
+                       OutlineColor="#c0c0c0" 
+                       Padding="0"
+                       Margin="15,30,15,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="person.png" Margin="10 ,0 ,0 ,0" Scale="0.7"/>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" HeightRequest="40" WidthRequest="330">
+                                <Label x:Name="labelUserName"
+                                    Text="User Name"
+                                    FontSize="13"
+                                    TextColor="Gray"
+                                    Margin="10,15,0,0"/>
+                                <ImageButton x:Name="buttonEditUserName"
+                                        Clicked="ButtonEditUserName_Clicked"
+                                        BackgroundColor="White"
+                                        Margin="0, 15 ,10 ,12"
+                                        Source="edit.png"
+                                        HorizontalOptions="EndAndExpand" 
+                                        VerticalOptions="End" 
+                                        Aspect="AspectFit"
+                                        Scale="1.9"
+                                        Padding="2"
+                                        />        
+                            </StackLayout >
+                            <StackLayout Orientation="Horizontal">
+                                <Label x:Name="dataUserFirstName"
+                                    Text="{Binding FirstName}"
+                                    FontSize="13"
+                                    TextColor="Black"
+                                    Margin="10,0,0,15"/>
+                                <Label x:Name="dataUserLsstName"
+                                    Text="{Binding LastName}"
+                                    FontSize="13"
+                                    TextColor="Black"
+                                    Margin="0,0,0,15"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <Grid>
+                <Frame CornerRadius="10"  
+                       OutlineColor="#c0c0c0" 
+                       Padding="0"
+                       Margin="15,10,15,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="mail.png" Margin="10 ,0 ,0 ,0" Scale="0.6"/>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" HeightRequest="40" WidthRequest="330">
+                            <Label x:Name="labelEmail"
+                               Text="Email"
+                               FontSize="13"
+                               TextColor="Gray"
+                               Margin="10,15,0,0"/>
+                            <ImageButton x:Name="buttonEditEmail"
+                                    Clicked="ButtonEditEmail_Clicked"
+                                    BackgroundColor="White"
+                                    Margin="0, 15 ,10 ,12"
+                                    Source="edit.png"
+                                    HorizontalOptions="EndAndExpand" 
+                                    VerticalOptions="End" 
+                                    Aspect="AspectFit"
+                                    Scale="1.9"
+                                    Padding="2"
+                                    />
+                        </StackLayout >
+                        <Label x:Name="dataUserEmail"
+                               Text="{Binding Email}"
+                               FontSize="13"
+                               TextColor="Black"
+                               Margin="10,0,0,15"/>      
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <Grid>
+                <Frame CornerRadius="10"  
+                       OutlineColor="#c0c0c0" 
+                       Padding="0"
+                       Margin="15,10,15,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="home.png" Margin="10 ,0 ,0 ,0" Scale="0.7"/>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" HeightRequest="40" WidthRequest="330">
+                            <Label x:Name="labelStreet"
+                               Text="Address"
+                               FontSize="14"
+                               TextColor="Gray"
+                               Margin="10,15,0,0"/>
+                            <ImageButton x:Name="buttonEditAddress"
+                                    Clicked="ButtonEditAddress_Clicked"
+                                    BackgroundColor="White"
+                                    Margin="0, 15 ,10 ,12"
+                                    Source="edit.png"
+                                    HorizontalOptions="EndAndExpand" 
+                                    VerticalOptions="End" 
+                                    Aspect="AspectFit"
+                                    Scale="1.9"
+                                    Padding="2"
+                                    />
+                        </StackLayout >
+                        <Label x:Name="dataStreet"
+                               Text="{Binding Street}"
+                               FontSize="13"
+                               TextColor="Black"
+                               Margin="10,5,0,0"/>
+                        <Label x:Name="dataCity"
+                               Text="{Binding City}"
+                               FontSize="13"
+                               TextColor="Black"
+                               Margin="10,0,0,15"/>  
+                    </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <Grid>
+                <Frame CornerRadius="10"  
+                       OutlineColor="#c0c0c0" 
+                       Padding="0"
+                       Margin="15,10,15,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="phone.png" Margin="10 ,0 ,0 ,0" Scale="0.55"/>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" HeightRequest="40" WidthRequest="330">
+                            <Label x:Name="labelPhone"
+                               Text="Phone"
+                               FontSize="13"
+                               TextColor="Gray"
+                               Margin="10,15,0,0"/>
+                            <ImageButton x:Name="buttonEditPhone"
+                                    Clicked="ButtonEditPhone_Clicked"
+                                    BackgroundColor="White"
+                                    Margin="0, 15 ,10 ,12"
+                                    Source="edit.png"
+                                    HorizontalOptions="EndAndExpand" 
+                                    VerticalOptions="End" 
+                                    Aspect="AspectFit"
+                                    Scale="1.9"
+                                    Padding="2"
+                                    />
+                        </StackLayout >
+                        <Label x:Name="dataPhone"
+                               Text="{Binding Phone}"
+                               FontSize="13"
+                               TextColor="Black"
+                               Margin="10,0,0,15"/>      
+                    </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <Grid>
+                <Frame CornerRadius="10"  
+                       OutlineColor="#c0c0c0" 
+                       Padding="0"
+                       Margin="15,10,15,0">
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="credit_card.png" Margin="10 ,0 ,0 ,0" Scale="0.55"/>
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal" HeightRequest="40" WidthRequest="330">
+                                <Label x:Name="labelCreditCard"
+                                   Text="Credit Card"
+                                   FontSize="13"
+                                   TextColor="Gray"
+                                   Margin="10,15,0,0"/>
+                            <ImageButton x:Name="buttonEditCreditCard"
+                                    Clicked="ButtonEditCreditCard_Clicked"
+                                    BackgroundColor="White"
+                                    Margin="0, 15 ,10 ,12"
+                                    Source="edit.png"
+                                    HorizontalOptions="EndAndExpand" 
+                                    VerticalOptions="End" 
+                                    Aspect="AspectFit"
+                                    Scale="1.9"
+                                    Padding="2"
+                                    />
+                        </StackLayout >
+                        <Label x:Name="dataCreditCard"
+                               Text="XXXX - XXXX - XXXX - 8773"
+                               FontSize="13"
+                               TextColor="Black"
+                               Margin="10,0,0,15"/>
+                    </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+          
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
