@@ -1,44 +1,128 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WSB_rent_car_app.CarSearch">
-    <ContentPage.Content>
-        <StackLayout BackgroundColor="White">
-            
-            <Label x:Name="labelUserName"
-               Text="Car type"
-               FontSize="14"
-               TextColor="Black"
-               Margin="3,30,0,0"/>
-            <Entry x:Name="entryUserName"
-               Placeholder="Car type box to be implemented"/>
-            <Label x:Name="labelUserName2"
-               Text="Country"
-               FontSize="14"
-               TextColor="Black"
-               Margin="3,30,0,0"/>
-            <Entry x:Name="entryUserName2"
-               Placeholder="Country combo box to be implemented"/>
-            <Label x:Name="labelUserName3"
-               Text="Pick Up location"
-               FontSize="14"
-               TextColor="Black"
-               Margin="3,30,0,0"/>
-            <Entry x:Name="entryUserName3"
-               Placeholder="to be implemented"/>
-            <Label x:Name="labelUserName4"
-               Text="Dates"
-               FontSize="14"
-               TextColor="Black"
-               Margin="3,30,0,0"/>
-            <Entry x:Name="entryUserName4"
-               Placeholder="Data picker to be implemented"/>
-            <Button x:Name="buttonSearch"
-                Text="Search"
+             x:Class="WSB_rent_car_app.CarSearch"
+             xmlns:controls="clr-namespace:WSB_rent_car_app.Components.XamBooksApp.Controls">
+<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="controls:StandardEntry">
+                <Setter Property="Padding" Value="0,10,13,10"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="BackgroundColor" Value="#ececec"></Setter>
+                <Setter Property="BorderColor" Value="#ececec"></Setter>
+                <Setter Property="FontSize" Value="12"></Setter>
+                <Setter Property="BorderThickness" Value="1"></Setter>
+                <Setter Property="CornerRadius" Value="14"></Setter>
+                <Setter Property="PlaceholderColor" Value="Gray"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout BackgroundColor="white">
+        <Frame CornerRadius="14"  
+                       OutlineColor="#ececec" 
+                       Padding="0"
+                       Margin="30,20,35,0"
+                BackgroundColor="#ececec"
+                   >
+            <StackLayout Orientation="Horizontal" >
+                <Image Source="Search.png" Scale="0.4"></Image>
+            <controls:StandardEntry
+            x:Name="entrySearchLocation"
+            Grid.Row="2"
+            Placeholder="Location"
+             HorizontalOptions="FillAndExpand"/>
+            </StackLayout>    
+        </Frame>    
+        <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+            <Frame CornerRadius="10"  
+                       OutlineColor="#c0c0c0" 
+                       Padding="0"
+                       Margin="30,10,0,0"
+                   >
+                <Grid BackgroundColor="#ececec">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="22"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="142"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="DateLabel" Text="Pick-Up" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" Margin="0,11,0,0" FontSize="11" BackgroundColor="#ececec" TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="DateLabelDays" Text="24" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" Margin="0,0,0,0" FontSize="28" BackgroundColor="#ececec" TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="DateLabelMonthYear" Text="NOV | 2022 test" Grid.Column="0" Grid.Row="2" HorizontalTextAlignment="Center" Margin="0,10,0,0" FontSize="10" FontAttributes="Bold" BackgroundColor="#ececec" TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="DateLabelHours" Text="12:00 PM" Grid.Column="0" Grid.Row="3" HorizontalTextAlignment="Center" Margin="0,0,0,0" FontSize="10" BackgroundColor="#ececec" TextColor="Gray">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <DatePicker x:Name="PickerDateUP" BackgroundColor="#ececec" Grid.Column="0" Grid.Row="1" FontSize="14" Format="dd MMMM yyyy" IsVisible="False" DateSelected="PickerDate_DateSelected"></DatePicker>
+                </Grid>
+            </Frame>
+            <Image Source="arrow.png" Scale="0.5" Margin="0,13,0,0"/>
+            <Frame CornerRadius="10"  
+                       OutlineColor="#c0c0c0" 
+                       Padding="0"
+                       Margin="0,10,15,0">
+                <Grid BackgroundColor="#ececec">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="25"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="22"></RowDefinition>
+                        <RowDefinition Height="30"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="142"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="DateLabelOff" Text="Drop-Off" Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" Margin="0,11,0,0" FontSize="11" BackgroundColor="#ececec" TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="DateLabelDaysOff" Text="24" Grid.Column="0" Grid.Row="1" HorizontalTextAlignment="Center" Margin="0,0,0,0" FontSize="28" BackgroundColor="#ececec" TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="DateLabelMonthYearOff" Text="NOV | 2022 a" Grid.Column="0" Grid.Row="2" HorizontalTextAlignment="Center" Margin="0,10,0,0" FontSize="10" FontAttributes="Bold" BackgroundColor="#ececec" TextColor="Black">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label x:Name="DateLabelHoursOff" Text="12:00 PM" Grid.Column="0" Grid.Row="3" HorizontalTextAlignment="Center" Margin="0,0,0,0" FontSize="10" BackgroundColor="#ececec" TextColor="Gray">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <DatePicker x:Name="PickerDateOFF" WidthRequest="151" BackgroundColor="#ececec" Grid.Column="0" Grid.Row="1" FontSize="14" Format="dd MMMM yyyy" IsVisible="False" DateSelected="PickerDateOFF_DateSelected"></DatePicker>
+                </Grid>
+            </Frame>
+        </StackLayout>
+        <Button x:Name="buttonSearch"
+                Text="Show cars"
                 BackgroundColor="#003662"
                 TextColor="White"
                 CornerRadius="15"
-                Margin="45,80,45,0"/>
-        </StackLayout>
-    </ContentPage.Content>
+                Margin="45,20,45,20"
+                FontSize="12"
+                Clicked="ButtonSearch_Clicked"
+                HeightRequest="40"/>
+        <StackLayout BackgroundColor="#ececec">
+            <ListView x:Name="carView">
+            </ListView>
+        </StackLayout>    
+    </StackLayout>
 </ContentPage>

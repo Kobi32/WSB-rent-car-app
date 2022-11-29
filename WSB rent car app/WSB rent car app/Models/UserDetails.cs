@@ -7,6 +7,7 @@ namespace WSB_rent_car_app.Models
 {
     public class UserDetails : IUserDetails
     {
+        public string Id { get; set; }
         public string Login { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }

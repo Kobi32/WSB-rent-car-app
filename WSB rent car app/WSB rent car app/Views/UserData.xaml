@@ -5,18 +5,25 @@
              >
     <ContentPage.Content>
         <StackLayout BackgroundColor="#ececec">
-            <Image Source="face.png" Margin="30 ,30 ,30 ,0" Scale="0.7"/>
+            <Image Source="account.png" Margin="30 ,30 ,30 ,0" Scale="0.8"/>
             <Label x:Name="labelUserLogin"
+               AutomationId="{Binding Id}"
                Text="{Binding Login}"
                FontSize="18"
                FontAttributes="Bold"
                TextColor="Black"
                HorizontalTextAlignment="Center"/>
+            <Label x:Name="labelPersonalData"
+                                    Text="Your personal data"
+                                    FontSize="15"
+                                    TextColor="Black"
+                                    FontAttributes="Bold"
+                                    Margin="17,50,0,0"/>
             <Grid>
                 <Frame CornerRadius="10"  
                        OutlineColor="#c0c0c0" 
                        Padding="0"
-                       Margin="15,30,15,0">
+                       Margin="15,10,15,0">
                     <StackLayout Orientation="Horizontal">
                         <Image Source="person.png" Margin="10 ,0 ,0 ,0" Scale="0.7"/>
                         <StackLayout Orientation="Vertical">
@@ -44,7 +51,7 @@
                                     FontSize="13"
                                     TextColor="Black"
                                     Margin="10,0,0,15"/>
-                                <Label x:Name="dataUserLsstName"
+                                <Label x:Name="dataUserLastName"
                                     Text="{Binding LastName}"
                                     FontSize="13"
                                     TextColor="Black"
@@ -168,41 +175,7 @@
                 </Frame>
             </Grid>
 
-            <Grid>
-                <Frame CornerRadius="10"  
-                       OutlineColor="#c0c0c0" 
-                       Padding="0"
-                       Margin="15,10,15,0">
-                    <StackLayout Orientation="Horizontal">
-                        <Image Source="credit_card.png" Margin="10 ,0 ,0 ,0" Scale="0.55"/>
-                        <StackLayout Orientation="Vertical">
-                            <StackLayout Orientation="Horizontal" HeightRequest="40" WidthRequest="330">
-                                <Label x:Name="labelCreditCard"
-                                   Text="Credit Card"
-                                   FontSize="13"
-                                   TextColor="Gray"
-                                   Margin="10,15,0,0"/>
-                            <ImageButton x:Name="buttonEditCreditCard"
-                                    Clicked="ButtonEditCreditCard_Clicked"
-                                    BackgroundColor="White"
-                                    Margin="0, 15 ,10 ,12"
-                                    Source="edit.png"
-                                    HorizontalOptions="EndAndExpand" 
-                                    VerticalOptions="End" 
-                                    Aspect="AspectFit"
-                                    Scale="1.9"
-                                    Padding="2"
-                                    />
-                        </StackLayout >
-                        <Label x:Name="dataCreditCard"
-                               Text="XXXX - XXXX - XXXX - 8773"
-                               FontSize="13"
-                               TextColor="Black"
-                               Margin="10,0,0,15"/>
-                    </StackLayout>
-                    </StackLayout>
-                </Frame>
-            </Grid>
+     
 
           
            

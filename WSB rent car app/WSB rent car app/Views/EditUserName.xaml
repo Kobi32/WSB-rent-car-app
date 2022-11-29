@@ -27,16 +27,26 @@
         </StackLayout>
     </NavigationPage.TitleView>
     <StackLayout x:Name="RegisterStack" Margin="55,35,55,55" BackgroundColor="White" Spacing="15">
+        <Label x:Name="labelFirstName"
+               Text="First Name"
+               FontSize="12"
+               TextColor="Black"
+               Margin="2,0,5,0"/>
         <controls:StandardEntry
             x:Name="entryUserFirstName"
             Grid.Row="2"
             Placeholder="First Name"/>
+        <Label x:Name="labelLastName"
+               Text="Last Name"
+               FontSize="12"
+               TextColor="Black"
+               Margin="2,0,5,0"/>
         <controls:StandardEntry
             x:Name="entryLastName"
             Grid.Row="2"
             FontSize="13"
             Placeholder="Last Name"/>
-        <StackLayout Margin="0,0,0,0" BackgroundColor="White">
+        <StackLayout Margin="0,10,0,0" BackgroundColor="White">
             <Button x:Name="buttonSave"
                 Text="Save"
                 Clicked="ButtonSave_Clicked"

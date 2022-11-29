@@ -27,12 +27,17 @@
         </StackLayout>
     </NavigationPage.TitleView>
     <StackLayout x:Name="RegisterStack" Margin="55,35,55,55" BackgroundColor="White" Spacing="15">
+        <Label x:Name="labelPhone"
+               Text="Phone number"
+               FontSize="12"
+               TextColor="Black"
+               Margin="2,0,5,0"/>
         <controls:StandardEntry
             x:Name="entryPhone"
             Grid.Row="2"
             CornerRadius="14"
             Placeholder="Phone Number"/>
-        <StackLayout Margin="0,0,0,0" BackgroundColor="White">
+        <StackLayout Margin="0,10,0,0" BackgroundColor="White">
             <Button x:Name="buttonSave"
                 Text="Save"
                 Clicked="ButtonSave_Clicked"

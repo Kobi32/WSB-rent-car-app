@@ -12,7 +12,7 @@ namespace WSB_rent_car_app.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class EditCreditCard : ContentPage
     {
-        public EditCreditCard()
+        public EditCreditCard(string id)
         {
             InitializeComponent();
         }

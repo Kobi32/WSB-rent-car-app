@@ -27,6 +27,7 @@ namespace WSB_rent_car_app.Service
         {
             var userData = (await firebaseClient.Child(nameof(UserDetails)).OnceAsync<UserDetails>()).Select(item => new UserDetails 
             {
+                Id = item.Key,
                 Login = item.Object.Login,
                 FirstName = item.Object.FirstName,
                 LastName = item.Object.LastName,
@@ -40,5 +41,31 @@ namespace WSB_rent_car_app.Service
             var user =  userData.Where(x => x.Login == loginName).FirstOrDefault();
             return user;
         }
-     }
+
+        public async Task<bool> EditUserProperty(string iD, string fieldName, string fieldValue , string fieldName2, string fieldValue2)
+        {
+            await firebaseClient
+                 .Child("UserDetails")
+                 .Child(iD)
+                 .Child(fieldName)
+                 .PutAsync(JsonConvert.SerializeObject(fieldValue));
+            await firebaseClient
+                 .Child("UserDetails")
+                 .Child(iD)
+                 .Child(fieldName2)
+                 .PutAsync(JsonConvert.SerializeObject(fieldValue2));
+
+            return true;
+        }
+
+        public async Task<bool> EditUserProperty(string iD, string fieldName, string fieldValue)
+        {
+            await firebaseClient
+                 .Child("UserDetails")
+                 .Child(iD)
+                 .Child(fieldName)
+                 .PutAsync(JsonConvert.SerializeObject(fieldValue));
+            return true;
+        }
+    }
 }

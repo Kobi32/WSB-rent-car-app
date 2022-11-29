@@ -3,57 +3,42 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WSB_rent_car_app.CarRentHistory">
     <ContentPage.Content>
-        <StackLayout BackgroundColor="White">
-            <Label x:Name="labelStreet"
-               Text="VW POLO"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataStreet"
-               Text="Country: Greece            Days: 5             Cost: 150 EUR"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
-            <Label x:Name="labelCity"
-               Text="VW POLO"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataCity"
-               Text="Country: Greece            Days: 2             Cost: 75 EUR"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
-            <Label x:Name="labelPhone"
-               Text="OPEL ASTRA"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataPhone"
-               Text="Country: Italy                 Days: 14             Cost: 1150 EUR"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
-            <Label x:Name="labelCreditCard"
-               Text="OPEL CORSA"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataCreditCard"
-               Text="Country: Poland            Days: 6             Cost: 169 EUR"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
-            <Label x:Name="labelCreditCard2"
-               Text="FIAT TIPO"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,30,0,0"/>
-            <Label x:Name="dataCreditCard2"
-               Text="Country: Poland            Days: 1             Cost: 25 EUR"
-               FontSize="14"
-               TextColor="Black"
-               Margin="10,5,0,0"/>
+        <StackLayout BackgroundColor="#ececec">
+            <ListView x:Name="listHistory" ItemsSource="{Binding MyItems}">
+                <ListView.Header>
+                    <Grid BackgroundColor="white">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <Label Text="Car" HorizontalOptions="Fill"  Grid.Column="0" FontSize="12" FontAttributes="Bold" BackgroundColor="#ececec" TextColor="Gray" HorizontalTextAlignment="Left" Margin="10,5,0,5" Padding="5,10,10,10"/>
+                        <Label Text="City" HorizontalOptions="Fill" Grid.Column="1" FontSize="12" FontAttributes="Bold" BackgroundColor="#ececec" TextColor="Gray" HorizontalTextAlignment="Left" Margin="0,5,0,5"  Padding="5,10,10,10"/>
+                        <Label Text="Cost" HorizontalOptions="Fill" Grid.Column="2" FontSize="12" FontAttributes="Bold" BackgroundColor="#ececec" TextColor="Gray" HorizontalTextAlignment="Left" Margin="0,5,0,5"  Padding="5,10,10,10"/>
+                        <Label Text="Days" HorizontalOptions="Fill" Grid.Column="3" FontSize="12" FontAttributes="Bold" BackgroundColor="#ececec" TextColor="Gray" HorizontalTextAlignment="Left" Margin="0,5,10,5"  Padding="5,10,10,10"/>
+                    </Grid>
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid BackgroundColor="white">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" FontSize="11" Text ="{Binding Switch}" HorizontalOptions="Fill" BackgroundColor="#ececec" HorizontalTextAlignment="Left" VerticalTextAlignment="Center" Margin="10,5,0,5" Padding="7"></Label>
+                                <Label Grid.Column="1" FontSize="11" Text ="{Binding Addend1}" HorizontalOptions="Fill" BackgroundColor="#ececec" HorizontalTextAlignment="Left" VerticalTextAlignment="Center" Margin="0,5,0,5" Padding="7"></Label>
+                                <Label Grid.Column="2" FontSize="11" Text ="{Binding Addend2}" HorizontalOptions="Fill" BackgroundColor="#ececec" HorizontalTextAlignment="Left" VerticalTextAlignment="Center" Margin="0,5,0,5" Padding="7"></Label>
+                                <Label Grid.Column="3" FontSize="11" Text ="{Binding Addend3}" HorizontalOptions="Fill" BackgroundColor="#ececec" HorizontalTextAlignment="Left" VerticalTextAlignment="Center" Margin="0,5,10,5" Padding="7"></Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -27,17 +27,27 @@
         </StackLayout>
     </NavigationPage.TitleView>
     <StackLayout x:Name="RegisterStack" Margin="55,35,55,55" BackgroundColor="White" Spacing="15">
+        <Label x:Name="labelStreet"
+               Text="Street"
+               FontSize="12"
+               TextColor="Black"
+               Margin="2,0,5,0"/>
         <controls:StandardEntry
             x:Name="entryStreet"
             Grid.Row="2"
             FontSize="13"
             Placeholder="Street" />
+        <Label x:Name="labelCity"
+               Text="City"
+               FontSize="12"
+               TextColor="Black"
+               Margin="2,0,5,0"/>
         <controls:StandardEntry
             x:Name="entryCity"
             Grid.Row="2"
             CornerRadius="14"
             Placeholder="City"/>
-        <StackLayout Margin="0,0,0,0" BackgroundColor="White">
+        <StackLayout Margin="0,10,0,0" BackgroundColor="White">
             <Button x:Name="buttonSave"
                 Text="Save"
                 Clicked="ButtonSave_Clicked"

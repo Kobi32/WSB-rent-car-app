@@ -2,15 +2,20 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:locals="clr-namespace:WSB_rent_car_app"
+            xmlns:views="clr-namespace:WSB_rent_car_app.Views"
             xmlns:models="clr-namespace:WSB_rent_car_app.Models"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
+            android:TabbedPage.BarItemColor="Black"
+            android:TabbedPage.BarSelectedItemColor="#1aa7ec"
             x:Class="WSB_rent_car_app.MainApplicationWindow"
             NavigationPage.HasNavigationBar="false"
-            BarBackgroundColor="White"
-            BarTextColor="Gray">
+           >
     <TabbedPage.BindingContext>
         <models:UserDataModel/>
     </TabbedPage.BindingContext>
     <locals:CarSearch Title="Search" Icon="search.png"/>
     <locals:CarRentHistory Title="History" Icon="history.png" />
+    <views:Message Title="Message" Icon="chat.png"/>
     <locals:UserData Title="User" Icon="person.png"/>
 </TabbedPage>
